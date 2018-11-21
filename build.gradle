@@ -1,0 +1,54 @@
+buildscript {
+    ext {
+        lombokVersion = '1.18.4'
+    }
+
+    repositories {
+        maven { url "http://maven.aliyun.com/nexus/content/groups/public/" }
+        jcenter()
+    }
+}
+
+apply plugin: 'eclipse'
+apply plugin: 'idea'
+apply plugin: 'application'
+
+group 'pool'
+version '1.0'
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+mainClassName = ''
+
+jar {
+    baseName = 'eosclient4j'
+    version = '1.0.0'
+    description = 'EOS客户端JAVA版本'
+}
+
+repositories {
+    maven { url "http://maven.aliyun.com/nexus/content/groups/public/" }
+    jcenter()
+}
+
+dependencies {
+    compile "org.projectlombok:lombok:${lombokVersion}"
+    compile group: 'org.slf4j', name: 'slf4j-api', version: '1.7.25'
+    compile 'com.squareup.okhttp3:okhttp:3.11.0'
+    compile 'org.apache.commons:commons-lang3:3.8.1'
+    compile 'com.squareup.retrofit2:retrofit:2.4.0'
+    compile 'com.squareup.retrofit2:converter-jackson:2.4.0'
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+}
+
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '4.10.2'
+}
+
+tasks.withType(JavaCompile) {
+    options.encoding = "UTF-8"
+}
+
+
