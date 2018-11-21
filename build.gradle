@@ -52,3 +52,8 @@ tasks.withType(JavaCompile) {
 }
 
 
+tasks.withType(Test) {
+    testLogging {
+        events 'started', 'passed'
+    }
+}
