@@ -177,12 +177,8 @@ public class EosRpcService {
             throws Exception {
         // get chain info
         ChainInfo info = getChainInfo();
-//		info.setChainId("cf057bbfb72640471fd910bcb67639c22df9f92470936cddc1ade0e2f2e7dc4f");
-//		info.setLastIrreversibleBlockNum(826366l);
-//		info.setHeadBlockTime(dateFormatter.parse("2018-08-22T09:19:01.000"));
         // get block info
         Block block = getBlock(info.getLastIrreversibleBlockNum().toString());
-//		block.setRefBlockPrefix(2919590658l);
         // tx
         Tx tx = new Tx();
         tx.setExpiration(info.getHeadBlockTime().getTime() / 1000 + 60);
@@ -271,15 +267,11 @@ public class EosRpcService {
                                      Long buyRam, String stakeNetQuantity, String stakeCpuQuantity, Long transfer) throws Exception {
         // get chain info
         ChainInfo info = getChainInfo();
-        // info.setChainId("cf057bbfb72640471fd910bcb67639c22df9f92470936cddc1ade0e2f2e7dc4f");
-        // info.setLastIrreversibleBlockNum(22117l);
         // get block info
         Block block = getBlock(info.getLastIrreversibleBlockNum().toString());
-        // block.setRefBlockPrefix(3920078619l);
         // tx
         Tx tx = new Tx();
         tx.setExpiration(info.getHeadBlockTime().getTime() / 1000 + 60);
-        // tx.setExpiration(1528436078);
         tx.setRef_block_num(info.getLastIrreversibleBlockNum());
         tx.setRef_block_prefix(block.getRefBlockPrefix());
         tx.setNet_usage_words(0l);
