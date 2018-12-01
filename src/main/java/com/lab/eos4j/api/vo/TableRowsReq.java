@@ -1,58 +1,32 @@
 package com.lab.eos4j.api.vo;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 
+@Slf4j
+@NoArgsConstructor
+@Data
+@AllArgsConstructor
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class TableRowsReq {
 
-	private String code = "eosio";
+    private String code = "eosio";
 
-	private String scope;
+    private String scope;
 
-	private String table;
-	
-	private Boolean json=true;
+    private String table;
 
-	private int limit = 10;
+    private Boolean json = true;
 
-	public String getCode() {
-		return code;
-	}
+    private int limit = 10;
 
-	public void setCode(String code) {
-		this.code = code;
-	}
+    @JsonProperty("lower_bound")
+    private int lowerBound = 0;
 
-	public String getScope() {
-		return scope;
-	}
-
-	public void setScope(String scope) {
-		this.scope = scope;
-	}
-
-	public String getTable() {
-		return table;
-	}
-
-	public void setTable(String table) {
-		this.table = table;
-	}
-
-	public int getLimit() {
-		return limit;
-	}
-
-	public void setLimit(int limit) {
-		this.limit = limit;
-	}
-
-	public Boolean getJson() {
-		return json;
-	}
-
-	public void setJson(Boolean json) {
-		this.json = json;
-	}
-
+    @JsonProperty("upper_bound")
+    private int upperBound = -1;
 }
