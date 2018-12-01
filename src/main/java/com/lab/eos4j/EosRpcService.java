@@ -44,7 +44,7 @@ public class EosRpcService {
     }
 
     /**
-     * 获取钱包信息
+     * 获得链信息
      *
      * @return
      */
@@ -53,7 +53,7 @@ public class EosRpcService {
     }
 
     /**
-     * 获取一个块的信息
+     * 获得区块信息
      *
      * @param blockNumberOrId 编号或ID
      * @return
@@ -140,7 +140,7 @@ public class EosRpcService {
     }
 
     /**
-     * 发送事务
+     * 发送交易
      *
      * @param tx
      * @return
