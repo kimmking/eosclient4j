@@ -20,13 +20,27 @@ public class TableRowsReq {
 
     private String table;
 
+    @JsonProperty("table_key")
+    private String tableKey;
+
     private Boolean json = true;
 
     private int limit = 10;
 
     @JsonProperty("lower_bound")
-    private int lowerBound = 0;
+    private String lowerBound;
 
     @JsonProperty("upper_bound")
-    private int upperBound = -1;
+    private String upperBound;
+
+    @JsonProperty("key_type")
+    private String keyType;
+
+    @JsonProperty("index_position")
+    private String indexPosition;
+
+    @JsonProperty("encode_type")
+    private String encodeType = "dec";
 }
+
+
